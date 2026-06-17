@@ -1,0 +1,9 @@
+<Solution>
+  <Project Path="HarbourOps.Adapters.EfSqlite/HarbourOps.Adapters.EfSqlite.csproj" />
+  <Project Path="HarbourOps.Adapters.EmailConsole/HarbourOps.Adapters.EmailConsole.csproj" />
+  <Project Path="HarbourOps.Adapters.FakePayments/HarbourOps.Adapters.FakePayments.csproj" />
+  <Project Path="HarbourOps.Api/HarbourOps.Api.csproj" />
+  <Project Path="HarbourOps.Application/HarbourOps.Application.csproj" />
+  <Project Path="HarbourOps.Domain/HarbourOps.Domain.csproj" />
+  <Project Path="HarbourOps.Tests/HarbourOps.Tests.csproj" />
+</Solution>

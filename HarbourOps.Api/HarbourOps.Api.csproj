@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <ItemGroup>
+    <ProjectReference Include="..\HarbourOps.Application\HarbourOps.Application.csproj" />
+    <ProjectReference Include="..\HarbourOps.Adapters.EfSqlite\HarbourOps.Adapters.EfSqlite.csproj" />
+    <ProjectReference Include="..\HarbourOps.Adapters.FakePayments\HarbourOps.Adapters.FakePayments.csproj" />
+    <ProjectReference Include="..\HarbourOps.Adapters.EmailConsole\HarbourOps.Adapters.EmailConsole.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.9" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+</Project>
