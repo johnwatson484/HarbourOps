@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="HarbourOps.Adapters.DecliningPayments/HarbourOps.Adapters.DecliningPayments.csproj" />
   <Project Path="HarbourOps.Adapters.EfSqlite/HarbourOps.Adapters.EfSqlite.csproj" />
   <Project Path="HarbourOps.Adapters.EmailConsole/HarbourOps.Adapters.EmailConsole.csproj" />
   <Project Path="HarbourOps.Adapters.FakePayments/HarbourOps.Adapters.FakePayments.csproj" />
