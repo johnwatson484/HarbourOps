@@ -1,0 +1,34 @@
+### List services
+GET http://localhost:5199/services
+
+### Create booking
+POST http://localhost:5199/bookings
+Content-Type: application/json
+
+{
+  "customerEmail": "ops.manager@example.com",
+  "vesselName": "MV Northern Star",
+  "containerNumber": "MSCU1234567",
+  "requestedDate": "2026-07-01"
+}
+
+### Add service to booking
+POST http://localhost:5199/bookings/{{bookingId}}/services
+Content-Type: application/json
+
+{
+  "serviceItemId": "11111111-1111-1111-1111-111111111111",
+  "quantity": 2
+}
+
+### Submit booking
+POST http://localhost:5199/bookings/{{bookingId}}/submit
+
+### Checkout booking
+POST http://localhost:5199/bookings/{{bookingId}}/checkout
+
+### Fulfil booking
+POST http://localhost:5199/bookings/{{bookingId}}/fulfil
+
+### List recent bookings
+GET http://localhost:5199/bookings

@@ -31,11 +31,30 @@ public sealed class HarbourOpsDbContext(DbContextOptions<HarbourOpsDbContext> op
         modelBuilder.Entity<Booking>(builder =>
         {
             builder.HasKey(x => x.Id);
-            builder.Property(x => x.CustomerEmail).HasMaxLength(320).IsRequired();
-            builder.Property(x => x.VesselName).HasMaxLength(200).IsRequired();
-            builder.Property(x => x.ContainerNumber).HasMaxLength(32).IsRequired();
-            builder.Property(x => x.Status).HasConversion<string>().HasMaxLength(32);
-            builder.Property(x => x.PaymentReference).HasMaxLength(200);
+
+            builder.Property(x => x.CustomerEmail)
+                .HasMaxLength(320)
+                .IsRequired();
+
+            builder.Property(x => x.VesselName)
+                .HasMaxLength(200)
+                .IsRequired();
+
+            builder.Property(x => x.ContainerNumber)
+                .HasMaxLength(32)
+                .IsRequired();
+
+            builder.Property(x => x.Status)
+                .HasConversion<string>()
+                .HasMaxLength(32);
+
+            builder.Property(x => x.PaymentReference)
+                .HasMaxLength(200);
+
+            builder.Property(x => x.CreatedAtUtc)
+                .HasConversion(
+                    value => value.ToUnixTimeMilliseconds(),
+                    value => DateTimeOffset.FromUnixTimeMilliseconds(value));
 
             builder.OwnsMany(x => x.Lines, line =>
             {
@@ -43,7 +62,9 @@ public sealed class HarbourOpsDbContext(DbContextOptions<HarbourOpsDbContext> op
                 line.WithOwner().HasForeignKey("BookingId");
                 line.HasKey(x => x.Id);
 
-                line.Property(x => x.ServiceName).HasMaxLength(200).IsRequired();
+                line.Property(x => x.ServiceName)
+                    .HasMaxLength(200)
+                    .IsRequired();
 
                 line.OwnsOne(x => x.UnitPrice, money =>
                 {

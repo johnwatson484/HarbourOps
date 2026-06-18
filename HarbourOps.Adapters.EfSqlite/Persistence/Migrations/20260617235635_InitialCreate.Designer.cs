@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HarbourOps.Adapters.EfSqlite.Persistence.Migrations
 {
     [DbContext(typeof(HarbourOpsDbContext))]
-    [Migration("20260617234942_InitialCreate")]
+    [Migration("20260617235635_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -31,8 +31,8 @@ namespace HarbourOps.Adapters.EfSqlite.Persistence.Migrations
                         .HasMaxLength(32)
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTimeOffset>("CreatedAtUtc")
-                        .HasColumnType("TEXT");
+                    b.Property<long>("CreatedAtUtc")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("CustomerEmail")
                         .IsRequired()
